@@ -54,16 +54,22 @@ function renderPages(){
     el.setAttribute("role","button");
     el.setAttribute("aria-label",`${item.title}を読む`);
     el.innerHTML = `
-      <div>
+      <div class="page-thumb-wrap">
+        <img class="page-thumb" src="${item.image}" alt="${item.title}" loading="lazy" />
+      </div>
+      <div class="page-card-copy">
         <p class="card-kicker">${item.no}</p>
         <h3>${item.title}</h3>
         <p>${item.subtitle}</p>
+        <span class="read-link">ページを開く →</span>
       </div>
-      <span class="read-link">Read the page →</span>
     `;
     el.addEventListener("click",()=>openPage(idx));
     el.addEventListener("keydown",e=>{
-      if(e.key==="Enter" || e.key===" ") openPage(idx);
+      if(e.key==="Enter" || e.key===" "){
+        e.preventDefault();
+        openPage(idx);
+      }
     });
     root.appendChild(el);
   });
@@ -74,7 +80,9 @@ function openPage(idx){
   const item = SITE_CONTENT.pages[idx];
   document.getElementById("modalKicker").textContent = item.no;
   document.getElementById("modalTitle").textContent = item.title;
-  document.getElementById("modalStory").innerHTML = item.story.map(p=>`<p>${p}</p>`).join("");
+  const image = document.getElementById("modalPageImage");
+  image.src = item.image;
+  image.alt = `${item.title} - ${item.no}`;
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden","false");
   document.body.classList.add("modal-open");

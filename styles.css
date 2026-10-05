@@ -29,20 +29,37 @@ body.modal-open{overflow:hidden}
 .hero{
   min-height:100svh;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:48px 24px;position:relative;
+  text-align:center;padding:44px 24px 78px;position:relative;overflow:hidden;
 }
-.ornament{font-size:28px;margin-bottom:18px}
 .eyebrow,.chapter-number,.card-kicker,.modal-kicker{
   text-transform:uppercase;letter-spacing:.24em;font-size:12px;
 }
-.hero h1{
-  font-family:Georgia,"Times New Roman",serif;
-  font-weight:400;font-size:clamp(58px,13vw,132px);line-height:.95;margin:0 0 24px;
+.hero .eyebrow{margin:0 0 18px;color:var(--muted)}
+.hero-logo{
+  width:min(760px,78vw);
+  max-height:52vh;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 14px;
 }
-.lead-en{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:clamp(18px,3vw,28px);margin:0 0 18px}
+.hero-signatures{
+  width:min(720px,78vw);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(18px,5vw,58px);
+  margin:0 auto 18px;
+}
+.hero-signatures img{
+  display:block;
+  width:min(310px,34vw);
+  height:82px;
+  object-fit:contain;
+}
+.lead-en{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:clamp(16px,2.4vw,24px);margin:0}
 .date{letter-spacing:.18em;font-size:12px}
 .scroll-link{
-  position:absolute;bottom:26px;color:inherit;text-decoration:none;
+  position:absolute;bottom:24px;color:inherit;text-decoration:none;
   display:flex;flex-direction:column;gap:4px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.72;
 }
 .arrow{font-size:18px}
@@ -54,16 +71,16 @@ main{width:min(1120px,100%);margin:0 auto}
   font-family:Georgia,"Times New Roman",serif;font-weight:400;
   font-size:clamp(36px,6vw,72px);line-height:1.14;margin:0 0 24px;
 }
+.intro h2{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:clamp(34px,5vw,58px);letter-spacing:.07em}
 .section-copy{max-width:720px;margin:0 0 46px;color:var(--muted)}
-.message{font-size:clamp(16px,2.2vw,20px);text-align:left;max-width:690px;margin:44px auto}
+.message{font-size:clamp(16px,2.2vw,20px);text-align:left;max-width:690px;margin:44px auto 0}
 .message p{margin:0 0 1.5em}
-.signature{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:22px}
 .movie-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
 .movie-card,.answer-card,.page-card{
   background:rgba(248,233,221,.6);border:1px solid var(--line);
   box-shadow:var(--shadow);
 }
-.movie-frame{aspect-ratio:16/9;background:rgba(35,24,21,.88);display:flex;align-items:center;justify-content:center;color:var(--paper-sub);text-align:center;padding:20px}
+.movie-frame{aspect-ratio:16/9;background:rgba(35,24,21,.88);display:flex;align-items:center;justify-content:center;color:var(--paper-sub);text-align:center;padding:20px;overflow:hidden}
 .movie-frame iframe{width:100%;height:100%;border:0}
 .play{font-size:28px;display:block;margin-bottom:12px}
 .movie-frame p{letter-spacing:.16em;margin:0 0 4px}
@@ -71,37 +88,58 @@ main{width:min(1120px,100%);margin:0 auto}
 .card-body{padding:24px 26px 28px}
 .card-body h3,.answer-card h3,.page-card h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:28px;margin:4px 0 8px}
 .card-body p{margin:0;color:var(--muted)}
-.note{font-size:12px;color:var(--muted);margin-top:22px}
 .answers-list{display:grid;gap:18px}
-.answer-card{padding:26px 28px}
-.answer-q{font-size:15px;color:var(--muted);margin:0 0 8px}
-.answer-a{font-size:22px;margin:0 0 8px}
+.answer-card{padding:28px 30px}
+.answer-q{font-size:16px;color:var(--muted);margin:0 0 10px}
+.answer-a{font-size:24px!important;margin:0 0 8px!important;line-height:1.55}
 .answer-story{margin:0;color:var(--muted)}
-.pages-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.pages-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 .page-card{
-  min-height:230px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;
-  cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  padding:0;overflow:hidden;cursor:pointer;
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
 }
 .page-card:hover{transform:translateY(-3px);box-shadow:0 22px 54px rgba(35,24,21,.16);background:rgba(248,233,221,.9)}
-.page-card p{color:var(--muted);margin:0}
-.read-link{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-size:12px;text-transform:uppercase;letter-spacing:.14em}
+.page-thumb-wrap{aspect-ratio:1075/1518;overflow:hidden;background:#e8d4bd;border-bottom:1px solid var(--line)}
+.page-thumb{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.page-card:hover .page-thumb{transform:scale(1.015)}
+.page-card-copy{padding:22px 24px 24px}
+.page-card-copy p{color:var(--muted);margin:0}
+.page-card h3{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-size:23px;line-height:1.45;margin:6px 0 6px}
+.read-link{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink)}
 .ending{text-align:center;padding-bottom:140px}
 .ending h2{font-style:italic}
+.ornament{font-size:28px;margin-bottom:18px}
 .final-rule{width:90px;height:1px;background:var(--ink);margin:42px auto}
 .final-thanks{font-family:Georgia,"Times New Roman",serif;font-size:22px;font-style:italic}
-.modal{position:fixed;inset:0;z-index:120;display:none}
+.modal{position:fixed;inset:0;z-index:120;display:none;padding:16px}
 .modal.is-open{display:block}
-.modal-backdrop{position:absolute;inset:0;background:rgba(23,16,13,.56);backdrop-filter:blur(3px)}
-.modal-book{position:relative;width:min(760px,calc(100% - 28px));max-height:calc(100svh - 40px);overflow:auto;margin:20px auto;background:var(--paper-sub);box-shadow:0 34px 90px rgba(0,0,0,.34);border:1px solid rgba(255,255,255,.25)}
-.modal-page{padding:72px clamp(28px,8vw,86px)}
-.modal-page h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(38px,7vw,64px);margin:8px 0 32px}
-.modal-story p{margin:0 0 1.5em}
-.modal-close{position:absolute;top:14px;right:18px;border:0;background:none;font-size:32px;color:var(--ink);cursor:pointer}
-.text-button{margin-top:32px;border:0;border-bottom:1px solid currentColor;background:none;padding:7px 0;color:var(--ink);font:inherit;cursor:pointer}
+.modal-backdrop{position:absolute;inset:0;background:rgba(23,16,13,.72);backdrop-filter:blur(4px)}
+.modal-book{
+  position:relative;z-index:1;width:min(920px,100%);max-height:calc(100svh - 32px);overflow:auto;
+  margin:0 auto;background:var(--paper-sub);box-shadow:0 34px 90px rgba(0,0,0,.34);border:1px solid rgba(255,255,255,.25);
+}
+.modal-image-header{padding:28px 64px 18px;text-align:center;border-bottom:1px solid var(--line)}
+.modal-image-header h2{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;font-weight:400;font-size:clamp(24px,4vw,38px);line-height:1.35;margin:5px 0 0}
+.modal-page-image-wrap{background:#d8c3ab;padding:18px;display:flex;justify-content:center}
+.modal-page-image{display:block;width:min(100%,760px);height:auto;box-shadow:0 14px 38px rgba(35,24,21,.2)}
+.modal-actions{text-align:center;padding:18px 20px 26px}
+.modal-close{position:sticky;float:right;top:10px;margin:10px 12px -56px 0;z-index:3;border:0;background:rgba(248,233,221,.94);border-radius:50%;width:42px;height:42px;line-height:38px;font-size:28px;color:var(--ink);cursor:pointer;box-shadow:0 4px 14px rgba(35,24,21,.18)}
+.text-button{border:0;border-bottom:1px solid currentColor;background:none;padding:7px 0;color:var(--ink);font:inherit;cursor:pointer}
 @media(max-width:760px){
-  .chapter{padding:82px 20px}
+  .hero{padding:34px 16px 70px;min-height:92svh}
+  .hero-logo{width:min(94vw,620px);max-height:none;margin-bottom:4px}
+  .hero-signatures{width:94vw;gap:10px;margin-bottom:14px}
+  .hero-signatures img{width:44vw;height:64px}
+  .lead-en{font-size:15px}
+  .chapter{padding:78px 18px}
   .movie-grid,.pages-grid{grid-template-columns:1fr}
   .movie-grid{gap:18px}
-  .hero{padding-inline:18px}
   .answer-card{padding:22px}
+  .answer-a{font-size:21px!important}
+  .modal{padding:0}
+  .modal-book{max-height:100svh;width:100%;height:100svh;margin:0;border:0}
+  .modal-image-header{padding:20px 52px 14px 20px}
+  .modal-page-image-wrap{padding:10px}
+  .modal-page-image{width:100%}
+  .modal-close{top:8px;margin:8px 8px -50px 0}
 }
