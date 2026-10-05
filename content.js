@@ -49,6 +49,7 @@ const SITE_CONTENT = {
     { no: "PAGE 03", title: "物語の世界と、大自然の世界へ", subtitle: "Day 3 · A page from our journey", image: "./assets/pages/page-3.webp" },
     { no: "PAGE 04", title: "夢と魔法と、眠らないクリスマス", subtitle: "Day 4 · A page from our journey", image: "./assets/pages/page-4.webp" },
     { no: "PAGE 05", title: "映画の世界へ", subtitle: "Day 5 · A page from our journey", image: "./assets/pages/page-5.webp" },
-    { no: "PAGE 06", title: "世界を巡る一日", subtitle: "Day 6 · A page from our journey", image: "./assets/pages/page-6.webp" }
+    { no: "PAGE 06", title: "世界を巡る一日", subtitle: "Day 6 · A page from our journey", image: "./assets/pages/page-6.webp" },
+    { no: "PAGE 07", title: "憧れのホテルへ", subtitle: "Day 7 · A page from our journey", image: "./assets/pages/page-7.webp" }
   ]
 };
