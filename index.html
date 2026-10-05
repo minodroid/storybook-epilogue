@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5dfc4" />
+  <title>Epilogue | The Storybook</title>
+  <meta name="description" content="Thank you for being part of our story." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="paper-noise"></div>
+
+  <header class="hero">
+    <div class="ornament">❦</div>
+    <p class="eyebrow">THE STORYBOOK</p>
+    <h1>Epilogue</h1>
+    <p class="lead-en">Thank You for Being Part of Our Story</p>
+    <p class="date">2026.10.11</p>
+    <a class="scroll-link" href="#thanks" aria-label="本文へ">
+      <span>Scroll</span>
+      <span class="arrow">↓</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="chapter intro" id="thanks">
+      <div class="chapter-number">Final Chapter</div>
+      <h2>あの日の物語を、もう一度。</h2>
+      <div class="message">
+        <p>私たちの物語の一日を、一緒に過ごしてくださった皆さまへ。</p>
+        <p>笑ったり、驚いたり、ときには物語の中を探検したり。皆さまと過ごしたひとつひとつの時間が、私たちにとって、かけがえのない思い出になりました。</p>
+        <p>会場でお届けした映像や、「Find Our Story」に隠されていた物語の続きも、このページに残しています。</p>
+        <p>結婚式というひとつの章は閉じましたが、私たちの物語は、まだ始まったばかりです。</p>
+        <p>これからも、どうぞよろしくお願いします。</p>
+      </div>
+      <p class="signature">Minoru &amp; Hikaru</p>
+    </section>
+
+    <section class="chapter" id="movies">
+      <div class="chapter-number">Chapter I</div>
+      <h2>Movies</h2>
+      <p class="section-copy">あの日、会場でお届けしたふたつの映像。</p>
+
+      <div class="movie-grid">
+        <article class="movie-card">
+          <div class="movie-frame placeholder" data-video="opening">
+            <div>
+              <span class="play">▶</span>
+              <p>OPENING MOVIE</p>
+              <small>動画URLを設定するとここに表示されます</small>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-kicker">The Beginning</p>
+            <h3>Opening Movie</h3>
+            <p>物語のはじまり。</p>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <div class="movie-frame placeholder" data-video="profile">
+            <div>
+              <span class="play">▶</span>
+              <p>PROFILE MOVIE</p>
+              <small>動画URLを設定するとここに表示されます</small>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-kicker">Our Story</p>
+            <h3>Profile Movie</h3>
+            <p>ふたりが歩いてきた物語。</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="note">※ 市販楽曲を使用した映像は、Web公開前に権利条件をご確認ください。</p>
+    </section>
+
+    <section class="chapter" id="answers">
+      <div class="chapter-number">Chapter II</div>
+      <h2>The Answers We Found</h2>
+      <p class="section-copy">Find Our Story ― あの日の答え合わせ。</p>
+
+      <div class="answers-list" id="answersList"></div>
+    </section>
+
+    <section class="chapter" id="lost-pages">
+      <div class="chapter-number">Chapter III</div>
+      <h2>The Lost Pages</h2>
+      <p class="section-copy">あの日、見つけられなかった物語も。7つのページをすべてここに。</p>
+
+      <div class="pages-grid" id="pagesGrid"></div>
+    </section>
+
+    <section class="chapter ending">
+      <div class="ornament">❦</div>
+      <h2>And the story goes on...</h2>
+      <p>ふたりの物語は、これからも続いていきます。</p>
+      <div class="final-rule"></div>
+      <p class="final-thanks">Thank you for being part of our story.</p>
+      <p class="date">2026.10.11</p>
+    </section>
+  </main>
+
+  <div class="modal" id="pageModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-book" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="閉じる" data-close>×</button>
+      <div class="modal-page">
+        <p class="modal-kicker" id="modalKicker"></p>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-story" id="modalStory"></div>
+        <button class="text-button" type="button" data-close>Close the page</button>
+      </div>
+    </article>
+  </div>
+
+  <script src="./content.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
